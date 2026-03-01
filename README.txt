@@ -1,32 +1,36 @@
 📬 Gmail Intelligent Cleaner
-Intelligent Email Governance Automation with n8n
+🚀 Intelligent Email Governance Automation with n8n
 
 
-
-🚀 Overview
+📌 Sobre o Projeto
 
 O Gmail Intelligent Cleaner é uma automação desenvolvida em n8n com o objetivo de aplicar regras inteligentes na caixa de entrada do Gmail, reduzindo ruído operacional e automatizando tarefas repetitivas.
 
 O workflow executa automaticamente a cada 1 minuto, analisa os e-mails da INBOX e aplica políticas configuráveis de exclusão com base em critérios definidos pelo usuário.
 
-Este projeto demonstra integração com API, lógica condicional em JavaScript e estruturação profissional de automação.
+Este projeto demonstra:
 
+Integração com API
 
+Lógica condicional em JavaScript
+
+Estruturação profissional de automação
+
+Mentalidade de governança de e-mails
 
 🎯 Problema Resolvido
 
 Caixas de entrada corporativas frequentemente acumulam:
 
-Emails operacionais irrelevantes
+📩 Emails operacionais irrelevantes
 
-Notificações automáticas
+🔔 Notificações automáticas
 
-Mensagens sem prioridade
+⚠️ Mensagens sem prioridade
 
 Isso gera perda de produtividade e ruído informacional.
 
 Este projeto implementa uma política automatizada de governança de e-mails.
-
 
 ⚙️ Regra Implementada (Versão Atual)
 
@@ -34,10 +38,9 @@ O workflow remove automaticamente emails que:
 
 ❌ Não possuem anexos
 
-❌ Não estão marcados como “STARRED”
+❌ Não estão marcados como STARRED
 
-Essa lógica pode ser facilmente modificada.
-
+A lógica pode ser facilmente modificada conforme necessidade.
 
 🔄 Customização e Escalabilidade
 
@@ -57,23 +60,19 @@ A arquitetura foi construída para permitir personalização completa das regras
 
 🗂 Outras labels do Gmail
 
-
-
 ⏱ Frequência de execução
 
-A lógica pode ser editada diretamente no Function Node (JavaScript), transformando o workflow em um mecanismo de regras personalizado.
+A lógica pode ser editada diretamente no Function Node (JavaScript) dentro do n8n, transformando o workflow em um mecanismo de regras personalizado.
 
-Isso permite adaptar a solução para:
+Casos de Uso
 
-Times de suporte
+🏢 Times de suporte
 
-Departamentos financeiros
+💰 Departamentos financeiros
 
-Governança corporativa
+📊 Governança corporativa
 
-Triagem automática inicial
-
-
+🤖 Triagem automática inicial
 
 🏗 Arquitetura do Workflow
 Cron Trigger (1 min)
@@ -85,9 +84,6 @@ Function Node – Análise JavaScript
 IF – Validação da Regra
         ↓
 Gmail – Delete (Move to Trash)
-
-
-
 🧠 Lógica Principal (JavaScript)
 return items.map(item => {
   const hasAttachment = item.json.attachments && item.json.attachments.length > 0;
@@ -102,9 +98,6 @@ return items.map(item => {
     }
   };
 });
-
-
-
 🛠 Tecnologias Utilizadas
 
 n8n
@@ -112,7 +105,6 @@ n8n
 Gmail API
 
 JavaScript
-
 
 🔐 Segurança
 
@@ -124,9 +116,7 @@ Configurar OAuth2 no n8n
 
 Criar suas próprias credenciais Gmail
 
-Nenhuma chave ou token está incluído.
-
-
+Nenhuma chave ou token está incluído neste repositório.
 
 🚀 Como Utilizar
 
@@ -140,21 +130,17 @@ Ajustar regras conforme necessidade
 
 Ativar workflow
 
-
-
 📈 Possíveis Evoluções
 
-Implementação de logs estruturados
+📊 Implementação de logs estruturados
 
-Relatório automático de emails removidos
+📑 Relatório automático de emails removidos
 
-Integração com Slack
+🔔 Integração com Slack
 
-Classificação automática por categoria
+🏷 Classificação automática por categoria
 
-Aplicação de políticas corporativas avançadas
-
-
+🏢 Aplicação de políticas corporativas avançadas
 
 💼 Competências Demonstradas
 
@@ -166,24 +152,22 @@ Lógica condicional
 
 Estruturação de workflow escalável
 
+Mentalidade de eficiência operacional
 
 🤝 Contribuição
 
 Sugestões, melhorias e forks são bem-vindos.
 Sinta-se à vontade para abrir issues ou propor melhorias.
 
-
 ⭐ Se este projeto foi útil
 
 Deixe uma estrela no repositório e conecte-se comigo no LinkedIn.
 
-
 👩‍💻 Autora
-
 Paula Sabino
+
 Automation | Cloud | Security | Process Optimization
 
 🔗 GitHub: https://github.com/Paula-Tech007
 
 🔗 LinkedIn: https://www.linkedin.com/in/paula-sabino-49830573/
-
