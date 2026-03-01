@@ -1,0 +1,153 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        }
+      },
+      "id": "fb2b4fa8-845c-452a-89dc-3bc0eef635c0",
+      "name": "Cron 1 Minutos",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        64
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 500,
+        "filters": {
+          "labelIds": [
+            "INBOX"
+          ]
+        }
+      },
+      "id": "cecac1c1-1919-4a80-b52b-5132d845736a",
+      "name": "Buscar Emails INBOX",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        -288,
+        64
+      ],
+      "webhookId": "4f1ef249-a5c8-4d3a-9743-447670037e94"
+    },
+    {
+      "parameters": {
+        "functionCode": "return items.map(item => {\n  const hasAttachment = item.json.attachments && item.json.attachments.length > 0;\n  const isStarred = item.json.labelIds && item.json.labelIds.includes('STARRED');\n\n  const deveriaApagar = !hasAttachment && !isStarred;\n\n  return {\n    json: {\n      id: item.json.id,\n      deveriaApagar\n    }\n  };\n});"
+      },
+      "id": "712e84d6-ab31-4b45-9f3e-ee5df42d0901",
+      "name": "Analisar Email",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        64
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json.deveriaApagar}}",
+              "operation": "isTrue"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ca8c756a-c27c-4f31-bf09-e6cafc3522d7",
+      "name": "Deve Deletar?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        112,
+        64
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "messageId": "={{$json[\"id\"]}}"
+      },
+      "id": "cf799b70-2fc6-4e0c-bb43-20a611c1c0c2",
+      "name": "Mover Para Lixeira",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        320,
+        -96
+      ],
+      "webhookId": "5d70c35a-bcb2-4e2f-b2fc-85455eb7978d",
+      "continueOnFail": true
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Cron 1 Minutos": {
+      "main": [
+        [
+          {
+            "node": "Buscar Emails INBOX",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Emails INBOX": {
+      "main": [
+        [
+          {
+            "node": "Analisar Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analisar Email": {
+      "main": [
+        [
+          {
+            "node": "Deve Deletar?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deve Deletar?": {
+      "main": [
+        [
+          {
+            "node": "Mover Para Lixeira",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "36853c10-201e-4a83-86e8-7a2fcb9a557d",
+  "meta": {
+    "instanceId": "039316e740ba90f41eae33597fbbcb6b8a1987eaa676378d69792a8eb1028320"
+  },
+  "id": "fgO0dormpJDtjso0",
+  "tags": []
+}
