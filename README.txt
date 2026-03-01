@@ -167,6 +167,15 @@ Lógica condicional
 Estruturação de workflow escalável
 
 
+🤝 Contribuição
+
+Sugestões, melhorias e forks são bem-vindos.
+Sinta-se à vontade para abrir issues ou propor melhorias.
+
+
+⭐ Se este projeto foi útil
+
+Deixe uma estrela no repositório e conecte-se comigo no LinkedIn.
 
 
 👩‍💻 Autora
@@ -177,3 +186,4 @@ Automation | Cloud | Security | Process Optimization
 🔗 GitHub: https://github.com/Paula-Tech007
 
 🔗 LinkedIn: https://www.linkedin.com/in/paula-sabino-49830573/
+
