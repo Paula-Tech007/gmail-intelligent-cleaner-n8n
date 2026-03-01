@@ -1,5 +1,8 @@
 📬 Gmail Intelligent Cleaner
 Intelligent Email Governance Automation with n8n
+
+
+
 🚀 Overview
 
 O Gmail Intelligent Cleaner é uma automação desenvolvida em n8n com o objetivo de aplicar regras inteligentes na caixa de entrada do Gmail, reduzindo ruído operacional e automatizando tarefas repetitivas.
@@ -7,6 +10,8 @@ O Gmail Intelligent Cleaner é uma automação desenvolvida em n8n com o objetiv
 O workflow executa automaticamente a cada 1 minuto, analisa os e-mails da INBOX e aplica políticas configuráveis de exclusão com base em critérios definidos pelo usuário.
 
 Este projeto demonstra integração com API, lógica condicional em JavaScript e estruturação profissional de automação.
+
+
 
 🎯 Problema Resolvido
 
@@ -22,6 +27,7 @@ Isso gera perda de produtividade e ruído informacional.
 
 Este projeto implementa uma política automatizada de governança de e-mails.
 
+
 ⚙️ Regra Implementada (Versão Atual)
 
 O workflow remove automaticamente emails que:
@@ -31,6 +37,7 @@ O workflow remove automaticamente emails que:
 ❌ Não estão marcados como “STARRED”
 
 Essa lógica pode ser facilmente modificada.
+
 
 🔄 Customização e Escalabilidade
 
@@ -50,6 +57,8 @@ A arquitetura foi construída para permitir personalização completa das regras
 
 🗂 Outras labels do Gmail
 
+
+
 ⏱ Frequência de execução
 
 A lógica pode ser editada diretamente no Function Node (JavaScript), transformando o workflow em um mecanismo de regras personalizado.
@@ -64,6 +73,8 @@ Governança corporativa
 
 Triagem automática inicial
 
+
+
 🏗 Arquitetura do Workflow
 Cron Trigger (1 min)
         ↓
@@ -74,6 +85,9 @@ Function Node – Análise JavaScript
 IF – Validação da Regra
         ↓
 Gmail – Delete (Move to Trash)
+
+
+
 🧠 Lógica Principal (JavaScript)
 return items.map(item => {
   const hasAttachment = item.json.attachments && item.json.attachments.length > 0;
@@ -88,6 +102,9 @@ return items.map(item => {
     }
   };
 });
+
+
+
 🛠 Tecnologias Utilizadas
 
 n8n
@@ -95,6 +112,7 @@ n8n
 Gmail API
 
 JavaScript
+
 
 🔐 Segurança
 
@@ -108,6 +126,8 @@ Criar suas próprias credenciais Gmail
 
 Nenhuma chave ou token está incluído.
 
+
+
 🚀 Como Utilizar
 
 Instalar n8n
@@ -119,6 +139,8 @@ Configurar credenciais Gmail OAuth2
 Ajustar regras conforme necessidade
 
 Ativar workflow
+
+
 
 📈 Possíveis Evoluções
 
@@ -132,6 +154,8 @@ Classificação automática por categoria
 
 Aplicação de políticas corporativas avançadas
 
+
+
 💼 Competências Demonstradas
 
 Automação de processos
@@ -142,4 +166,14 @@ Lógica condicional
 
 Estruturação de workflow escalável
 
-Mentalidade de governança e eficiência operacional
+
+
+
+👩‍💻 Autora
+
+Paula Sabino
+Automation | Cloud | Security | Process Optimization
+
+🔗 GitHub: https://github.com/Paula-Tech007
+
+🔗 LinkedIn: https://www.linkedin.com/in/paula-sabino-49830573/
